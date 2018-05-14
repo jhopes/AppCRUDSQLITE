@@ -5,12 +5,21 @@ package Modell;
  */
 
 public class usuario {
-    private String login, clave, estado;
+    private String id_, login, clave, estado;
     public usuario(){}
-    public usuario(String login, String clave, String estado) {
+    public usuario(String id, String login, String clave, String estado) {
+        this.id_ = id;
         this.login = login;
         this.clave = clave;
         this.estado = estado;
+    }
+
+    public String getId_() {
+        return id_;
+    }
+
+    public void setId_(String id_) {
+        this.id_ = id_;
     }
 
     public String getLogin() {

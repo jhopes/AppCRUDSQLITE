@@ -39,7 +39,7 @@ public class ListaActivity extends AppCompatActivity {
         cursorlista = clsus.readUsuario();
         if(cursorlista.moveToFirst()) {
             do {
-                data.add(new usuario(cursorlista.getString(1), cursorlista.getString(2), cursorlista.getString(3)));
+                data.add(new usuario(cursorlista.getString(0),cursorlista.getString(1), cursorlista.getString(2), cursorlista.getString(3)));
             } while (cursorlista.moveToNext());
         }
 
@@ -55,7 +55,7 @@ public class ListaActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         clsus.deleteUsuario(us.getLogin().toString());
-                        Snackbar.make(view, "Login "+us.getLogin(), Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, "Login "+us.getId_(), Snackbar.LENGTH_LONG)
                                 .show();
                         listar();
                     }
